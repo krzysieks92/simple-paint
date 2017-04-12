@@ -40,7 +40,7 @@ function eraseHandler(){
 	eraseIsClicked = true;
 	
 	if(eraseIsClicked === true){
-		canvas.style.cursor = "url('img/eraser.png'), auto";
+		canvas.style.cursor = "url('eraser.png'), auto";
 		document.querySelector(".color").value = '#ffffff';
 		color = '#ffffff';
 	}
@@ -81,7 +81,7 @@ brushItem.addEventListener('click', brushHandler);
 erase.addEventListener('click', eraseHandler);
 document.querySelector(".brushSize").onchange = brush;
 brushItem.addEventListener('click', function(){
-canvas.style.cursor = "url('img/painted.png'), auto";
+canvas.style.cursor = "url('painted.png'), auto";
 canvas.addEventListener('mousemove', draw);
 canvas.addEventListener('mousedown', (e) => {
 isDrawing = true;
