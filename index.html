@@ -1,0 +1,35 @@
+﻿<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8" />
+	<meta name="description" content="simple paint">
+	<meta name="keywords" content="simple paint">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+	<title> simple paint </title>
+
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+
+</head>
+
+<body>
+	<canvas id="draw" width="800" height="800"></canvas>
+
+	<div class="btnContainer">
+		<label for="color">Color</label>
+		<input name="color" type="color" class="color" value="Color">
+		<button class="brush btn">Brush</button>
+		<input name="brush" type="range" class="brushSize" value="20" min="1" max="100" data-sizing="px" onchange="updateTextInput(this.value);">
+		<p class="textInput">20</p>
+		<button class="erase btn">Erase</button>
+		<button><a class="download btn" download="MyFileName.jpg">Download</a></button>
+		<button class="clear btn">Clear</button>
+		<h2 class="info">Choose Tool</h2>
+	</div>
+
+<script type="text/javascript" src="js/javasc.js"></script>
+
+</body>
+
+</html>
