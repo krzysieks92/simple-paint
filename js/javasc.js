@@ -15,12 +15,6 @@ var isDrawing = false;
 var lastX = 0;
 var lastY = 0;
 
-/*funkcja odpowiadajaca za znikniecie napisu z naglowka "info" po nacisnieciu dowolnego przycisku*/
-buttons.forEach(button => button.addEventListener('click', function(e){
-	e.target.removeEventListener(e.type, arguments.callee); //funkcja wykonywana tylko raz
-	info.textContent = '';	
-}));
-
 /*funckja sprawdzajaca czy zostal nacisniety przycisk brush*/
 function brushHandler(){
 	brushIsClicked = true;
