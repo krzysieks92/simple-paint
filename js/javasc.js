@@ -15,6 +15,13 @@ var isDrawing = false;
 var lastX = 0;
 var lastY = 0;
 
+for(var key in buttons){
+	buttona[key].onclick = function(){
+		e.target.removeEventListener(e.type, arguments.callee); //funkcja wykonywana tylko raz
+		info.textContent = '';		
+	}
+}
+
 /*funckja sprawdzajaca czy zostal nacisniety przycisk brush*/
 function brushHandler(){
 	brushIsClicked = true;
@@ -58,8 +65,8 @@ function draw(e){
 		//konczy sie
 		ctx.lineTo(e.offsetX, e.offsetY);
 		ctx.stroke();
-		[lastX, lastY] = [e.offsetX, e.offsetY];// =lastX = e.offsetX; lastY = e.offsetY;
-		
+		lastX = e.offsetX;
+		lastY = e.offsetY;
 		ctx.lineJoin = 'round';
 		ctx.lineCap = 'round';
 }
@@ -79,7 +86,8 @@ canvas.style.cursor = "url('painted.png'), auto";
 canvas.addEventListener('mousemove', draw);
 canvas.addEventListener('mousedown', function(e){
 isDrawing = true;
-[lastX, lastY] = [e.offsetX, e.offsetY];
+lastX = e.offsetX;
+lastY = e.offsetY;
 });
 canvas.addEventListener('mouseup', function() {isDrawing = false;});
 canvas.addEventListener('mouseout', function() {isDrawing = false;});
