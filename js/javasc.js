@@ -77,12 +77,12 @@ document.querySelector(".brushSize").onchange = brush;
 brushItem.addEventListener('click', function(){
 canvas.style.cursor = "url('painted.png'), auto";
 canvas.addEventListener('mousemove', draw);
-canvas.addEventListener('mousedown', (e) => {
+canvas.addEventListener('mousedown', function(e){
 isDrawing = true;
 [lastX, lastY] = [e.offsetX, e.offsetY];
 });
-canvas.addEventListener('mouseup', () => isDrawing = false);
-canvas.addEventListener('mouseout', () => isDrawing = false);
+canvas.addEventListener('mouseup', function() {isDrawing = false;});
+canvas.addEventListener('mouseout', function() {isDrawing = false;});
 });
 clear.onclick = function(){
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
