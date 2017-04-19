@@ -16,7 +16,7 @@ var lastX = 0;
 var lastY = 0;
 
 for(var key in buttons){
-	buttona[key].onclick = function(){
+	buttons[key].onclick = function(){
 		e.target.removeEventListener(e.type, arguments.callee); //funkcja wykonywana tylko raz
 		info.textContent = '';		
 	}
